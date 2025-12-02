@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Backpack AI Trainer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<!-- START MODAL -->
+<div id="startModal" class="modal show">
+  <div class="modal-box">
+    <h2>Начнём проверку?</h2>
+    <button id="startBtn" class="btn btn-main modal-btn">Старт</button>
+  </div>
+</div>
+
+<!-- END MODAL -->
+<div id="endModal" class="modal">
+  <div class="modal-box">
+    <h2>Обучение завершено!</h2>
+    <button id="restartBtn" class="btn btn-main modal-btn">Начать сначала</button>
+  </div>
+</div>
+
+<body>
+
+<div class="wrapper">
+
+  <header class="topbar">
+  <div class="logo">
+    <img src="assets/img/icon_ai.png" class="logo-icon">
+    <span>Backpack AI Trainer</span>
+  </div>
+
+  <div class="progress-box">
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+  </div>
+
+  <div class="step-indicator">
+    <div class="step-circle" id="stepCircle">1</div>
+    <span id="stepTitle">Первые примеры</span>
+  </div>
+</header>
+
+  <main class="content">
+    <section class="left-panel" id="left">
+  <h2 class="panel-title">
+  <span id="leftStage"></span>
+</h2>
+  <div id="imageGrid" class="image-grid"></div>
+</section>
+
+<section class="right-panel" id="right">
+  <div class="chat-block">
+    <div class="msg bitik">
+      <div class="avatar">🤖</div>
+      <div class="bubble" id="bitikText">…</div>
+    </div>
+
+    <div class="msg ai">
+      <div class="avatar ai-avatar">🧠</div>
+      <div class="bubble ai-bubble">
+        <div id="aiText">…</div>
+        <div class="ai-status" id="aiStatus">…</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button class="btn btn-main" id="btnTrain">✨ Действие</button>
+    <button class="btn btn-next" id="btnNext">Дальше ▶</button>
+  </div>
+</section>
+  </main>
+
+</div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

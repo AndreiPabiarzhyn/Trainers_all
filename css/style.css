@@ -1,0 +1,357 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  background: #f2f2f2;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ===== WRAPPER ===== */
+.wrapper {
+  max-width: 1100px;
+  width: 100%;
+  animation: fadeIn 0.8s ease;
+}
+
+/* ===== TOP BAR ===== */
+.topbar {
+  width: 100%;
+  background: #2b2b2b;
+  color: white;
+  padding: 14px 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  animation: slideDown 0.6s ease;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.step-indicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.step-circle {
+  width: 32px;
+  height: 32px;
+  background: #00bceb;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+#stepTitle {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* ===== PROGRESS BAR ===== */
+/* Контейнер для прогресс-бара справа */
+.progress-box {
+  width: 240px;         /* <<< регулируй здесь (200–260px идеально) */
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+}
+
+/* Общий фон */
+.progress-container {
+  width: 100%;
+  background: #444;
+  height: 8px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Заполняющая полоса */
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #00bceb;
+  transition: width 0.4s ease;
+}
+
+/* ===== MAIN LAYOUT ===== */
+.content {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 20px;
+  animation: fadeIn 0.65s ease;
+}
+
+@media (max-width: 900px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== LEFT PANEL ===== */
+.left-panel {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  border: 2px solid #e1e1e1;
+  animation: slideLeft 0.6s ease;
+}
+
+.panel-title {
+  font-size: 20px;
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+/* Карточка картинки */
+.img-card {
+  background: #fafafa;
+  border-radius: 12px;
+  padding: 12px;
+  border: 2px solid #e3e3e3;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeUp 0.5s ease forwards;
+}
+
+.img-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  border-color: #00bceb;
+}
+
+.img-card img {
+  width: 100%;
+  max-height: 120px;
+  object-fit: contain;
+}
+
+.img-card div {
+  margin-top: 8px;
+  text-align: center;
+  font-weight: 600;
+  color: #444;
+}
+
+/* ===== RIGHT PANEL ===== */
+.right-panel {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  border: 2px solid #e1e1e1;
+  animation: slideRight 0.6s ease;
+}
+
+.chat-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Сообщения */
+.msg {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  opacity: 0;
+  animation: fadeInMessage 0.8s ease forwards;
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  background: #2b2b2b;
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.ai-avatar {
+  background: #00bceb;
+}
+
+.bubble {
+  background: #f6f6f6;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 2px solid #e1e1e1;
+  font-size: 18px;
+  line-height: 1.4;
+  animation: fadeScale 0.4s ease;
+}
+
+.ai-bubble {
+  background: #e7faff;
+  border-color: #bdeeff;
+}
+
+.ai-status {
+  font-size: 16px;
+  margin-top: 6px;
+  opacity: 0.8;
+}
+
+/* ===== BUTTONS ===== */
+.controls {
+  margin-top: 22px;
+  display: flex;
+  gap: 14px;
+}
+
+.btn {
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 15px;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-main {
+  background: #00bceb;
+  color: white;
+  box-shadow: 0 4px 0 #0091ad;
+}
+
+.btn-next {
+  background: #555;
+  color: white;
+  box-shadow: 0 4px 0 #333;
+}
+
+.btn-main:hover {
+  background: #04c7fa;
+}
+
+.btn-next:hover {
+  background: #666;
+}
+
+.btn-main-done {
+  background: #04c7fa !important;
+  box-shadow: 0 3px 0 #007a92 !important;
+  opacity: 0.85;
+}
+
+/* MODALS  */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-box {
+  background: white;
+  padding: 28px 34px;
+  border-radius: 16px;
+  text-align: center;
+  width: 340px;
+  animation: fadeScale 0.35s ease;
+  transform: translateY(-80px); /* ← ДОБАВИЛИ ВОТ ЭТО */
+}
+
+.modal-btn {
+  margin-top: 18px;
+  width: 100%;
+}
+
+/* AI thinking animation */
+.ai-thinking {
+  opacity: 0.7;
+  animation: aiBlink 1s infinite;
+}
+
+#leftStage {
+  font-size: 22px;
+  font-weight: 700;
+  color: #00a8d6;
+}
+
+@keyframes aiBlink {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInMessage {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeScale {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
