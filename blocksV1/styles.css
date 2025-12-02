@@ -1,0 +1,297 @@
+/* Общий стиль */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: url('fon.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  width: 95%; /* Увеличена ширина контейнера */
+  height: 90%;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Левая панель */
+.blocks-panel {
+  width: 15%; /* Уменьшена ширина левой панели */
+  background: #e3f2fd;
+  border-right: 1px solid #ccc;
+  padding: 15px; /* Уменьшен отступ */
+}
+
+.blocks-panel h2 {
+  margin-bottom: 10px;
+  font-size: 16px; /* Уменьшен размер текста */
+  color: #444;
+}
+
+.block {
+  background: #bbdefb;
+  padding: 8px 10px; /* Уменьшен размер блоков */
+  margin-bottom: 8px;
+  border-radius: 8px;
+  cursor: grab;
+  text-align: center;
+  font-size: 14px; /* Уменьшен размер текста */
+  transition: background 0.3s;
+  border: 2px solid #444;
+  font-weight: bold;
+}
+
+.block:hover {
+  background: #90caf9;
+}
+
+/* Центральная панель */
+.solution-panel {
+  width: 45%; /* Уменьшена ширина центральной панели */
+  background: #ffffff;
+  padding: 15px; /* Уменьшен отступ */
+  display: flex;
+  flex-direction: column;
+}
+
+#solution-area {
+  flex-grow: 1;
+  background: #f9f9f9;
+  border: 2px dashed #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  min-height: 200px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 0px; /* Уменьшено расстояние между блоками */
+  overflow-y: auto;
+  position: relative;
+}
+
+#solution-area p {
+  color: #aaa;
+  font-size: 12px; /* Уменьшен размер текста подсказки */
+}
+
+#solution-area .block {
+  background: #bbdefb;
+  padding: 6px 8px; /* Уменьшен размер блоков */
+  border-radius: 6px;
+  font-size: 12px; /* Уменьшен размер текста */
+}
+
+#solution-area .block::after {
+  content: '×';
+  position: absolute;
+  top: 2px;
+  right: 6px;
+  font-size: 14px;
+  color: #e74c3c;
+  cursor: pointer;
+}
+
+#solution-area .block:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  bottom: -12px; /* Уменьшено расстояние между соединителями */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 10px; /* Уменьшена длина соединителей */
+  background: #444;
+}
+
+/* Кнопки */
+.styled-button {
+  padding: 8px 16px; /* Уменьшен размер кнопок */
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px; /* Уменьшен размер текста */
+  transition: background 0.3s;
+}
+
+#reset-button {
+  background: #ff9800;
+  color: white;
+}
+
+#reset-button:hover {
+  background: #e68a00;
+}
+
+.styled-button:hover {
+  background: #45a049;
+}
+
+.task-button {
+  background: #2196f3;
+}
+
+.task-button:hover {
+  background: #1e88e5;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px; /* Уменьшен отступ */
+}
+
+.task-switcher {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px; /* Уменьшен отступ */
+}
+
+.task-switcher span {
+  font-size: 14px; /* Уменьшен размер текста */
+  color: #555;
+}
+
+/* Правая панель */
+.result-panel {
+  flex-grow: 1; /* Панель растягивается на оставшееся пространство */
+  background: #ffebee;
+  border-left: 1px solid #ccc;
+  padding: 15px; /* Уменьшен отступ */
+  display: flex;
+  flex-direction: column;
+}
+
+#game-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Автоматическое изменение размера ячеек */
+  grid-template-rows: repeat(4, 1fr);
+  gap: 4px;
+  flex-grow: 1; /* Сетка растягивается на всю высоту панели */
+}
+
+.cell {
+  background: #fff;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px; /* Уменьшен размер значков */
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.cell.hero {
+  background: none;
+  position: relative;
+  overflow: visible; /* важно, чтобы ничего не обрезалось */
+}
+
+.cell.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* теперь изображение полностью помещается */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  pointer-events: none; /* чтобы не мешало кликам */
+}
+
+.cell.crystal {
+  background: #ffeb3b;
+  position: relative;
+  z-index: 1;
+}
+
+.cell.crystal:before {
+  content: '💎';
+  font-size: 24px; /* Уменьшен размер кристалла */
+}
+
+/* Оверлей */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.overlay-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.overlay-content p {
+  font-size: 20px; /* Уменьшен размер текста */
+  margin-bottom: 15px;
+}
+
+/* Стили для завершения игры */
+#completion-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#completion-overlay.hidden {
+  display: none;
+}
+
+#completion-overlay .overlay-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#completion-overlay img {
+  max-width: 120px; /* Уменьшен размер изображения */
+  margin-bottom: 10px;
+}
+
+#completion-overlay p {
+  font-size: 16px; /* Уменьшен размер текста */
+  margin-bottom: 10px;
+}
+
+#completion-overlay #completion-time {
+  font-size: 18px; /* Уменьшен размер текста */
+  color: #4caf50;
+  font-weight: bold;
+}

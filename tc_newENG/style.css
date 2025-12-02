@@ -1,0 +1,213 @@
+/* Общие стили и убираем прокрутку */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* 🔹 убираем скролл */
+  font-family: 'Poppins', sans-serif;
+  background: transparent; /* 🔹 прозрачный фон */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: #333;
+  padding-top: 40px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.game {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  padding: 20px;
+  min-width: 120px;
+  min-height: 120px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
+
+.operator {
+  font-size: 48px;
+  font-weight: 700;
+  color: #ff4d4f;
+  user-select: none;
+}
+
+.input-area {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 120px;
+  text-align: center;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background: #4cafef;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #3a90d9;
+}
+
+/* Анимация эмодзи */
+.emoji {
+  animation: pop 0.4s ease;
+  display: inline-block;
+  margin: 4px;
+}
+
+@keyframes pop {
+  0% { transform: scale(0); opacity: 0; }
+  70% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* Модальные окна */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.3); /* 🔹 полупрозрачный слой */
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay.active {
+  display: flex;
+}
+
+.modal {
+  background: rgba(255,255,255,0.9); /* 🔹 полупрозрачная белая карточка */
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 400px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+/* 📱 Телефоны */
+@media (max-width: 600px) {
+  body {
+    padding-top: 20px;
+    justify-content: center; /* центрируем содержимое */
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+
+  .game {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card {
+    min-width: 80px;
+    min-height: 80px;
+    font-size: 28px;
+    padding: 10px;
+  }
+
+  .operator {
+    font-size: 32px;
+  }
+
+  .input-area {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  input {
+    width: 100px;
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .modal {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+/* 📲 Планшеты */
+@media (min-width: 601px) and (max-width: 900px) {
+  body {
+    padding-top: 30px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .card {
+    min-width: 100px;
+    min-height: 100px;
+    font-size: 32px;
+    padding: 15px;
+  }
+
+  .operator {
+    font-size: 40px;
+  }
+
+  input {
+    width: 120px;
+    font-size: 15px;
+  }
+
+  button {
+    font-size: 15px;
+    padding: 10px 18px;
+  }
+
+  .modal {
+    width: 80%;
+  }
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+#next-btn {
+  background: #28a745; /* зелёная кнопка */
+}
+
+#next-btn:hover {
+  background: #218838;
+}

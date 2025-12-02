@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тренажер по работе с клавиатурой</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="backgroundContainer">
+    <div id="app">
+      <div id="languageSelection">
+        <button id="englishBtn" class="lang-btn active">Английские буквы</button>
+        <button id="russianBtn" class="lang-btn">Русские буквы</button>
+      </div>
+      <button id="startStopBtn">Начать</button>
+      <div id="prompt">Print the letters:</div>
+      <div id="keys" class="keyboard-container"></div>
+      <div id="status">
+        <div id="timer">Timer: 0 sec</div>
+        <div id="score">Correct: 0</div>
+      </div>
+
+      <div id="winningGifContainer" class="modal hidden">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <img id="winningGif" src="" alt="">
+          <p id="winningText"></p>
+        </div>
+      </div>
+
+      <div id="layoutWarning" class="layout-warning hidden">
+        Пожалуйста, переключитесь на нужную раскладку клавиатуры
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

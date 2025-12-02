@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>KODLAND</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Стартовый экран -->
+  <div id="start-screen" class="overlay active">
+    <div class="modal">
+      <h2>Реши пример, чтобы узнать,<br> сколько стикеров нужно для ракеты 🚀</h2>
+      <button onclick="startGame()">Старт</button>
+    </div>
+  </div>
+
+  <!-- Игровая зона -->
+  <h1>KODLAND</h1>
+  <div class="game">
+    <div id="left" class="card"></div>
+    <div id="operator" class="operator"></div>
+    <div id="right" class="card"></div>
+  </div>
+
+  <div class="input-area">
+    <input type="number" id="answer" placeholder="Ваш ответ">
+    <button onclick="checkAnswer()">Проверить</button>
+  </div>
+
+  <!-- Модальное окно -->
+  <div id="result-modal" class="overlay">
+  <div class="modal">
+    <h2 id="modal-text"></h2>
+    <div class="btn-group">
+      <button id="restart-btn" onclick="restartGame()">↩️</button>
+      <button id="next-btn" onclick="closeApp()">Вперёд!</button>
+    </div>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

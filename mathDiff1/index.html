@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Генератор примеров</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1></h1>
+    <div id="score">🧮: 0</div>
+    <div class="problem">
+      <span id="num1"></span> - <span id="num2"></span> =
+      <input type="text" id="answer">
+      <button onclick="checkAnswer()">»</button>
+    </div>
+    <div class="visual">
+      <div class="visual-container" id="visual1"></div>
+      <div class="visual-container" id="visual2"></div>
+      <div class="visual-container" id="visual3">= ?</div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal">
+    <div class="modal-content" id="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <img src="" id="modal-image" alt="Результат">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

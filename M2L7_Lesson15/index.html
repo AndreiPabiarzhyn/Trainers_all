@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyboard simulator</title>
+</head>
+<body>
+  <div class="game-container">
+    <div class="game">
+      <div class="timer">Timer: <span id="timer">- -</span></div>
+      <button id="startButton">Start</button>
+      <div id="word"></div>
+      <input type="text" id="userInput" placeholder="Type the word">
+      <div class="score">
+        <span class="correct">Correct: <span id="correctCount">0</span></span>
+        <span class="wrong">Incorrect: <span id="wrongCount">0</span></span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal" id="resultModal">
+    <div class="modal-content">
+      <img src="https://res.cloudinary.com/dk0qm0a6j/image/upload/v1719257355/unname111d_isjbhn.gif" alt="Гифка" id="resultGif">
+      <div class="result-text">
+        <p>Correct: <span id="modalCorrectCount">0</span></p>
+        <p>Incorrect: <span id="modalWrongCount">0</span></p>
+      </div>
+      <button id="restartButton">Restart</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

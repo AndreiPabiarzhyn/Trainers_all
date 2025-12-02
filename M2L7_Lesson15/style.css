@@ -1,0 +1,203 @@
+/* Стили для адаптивности и внешнего вида игры */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('https://res.cloudinary.com/dk0qm0a6j/image/upload/v1719258986/Frame_1720768592_vq46ys.png'); /* Замените ссылку на свою картинку */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Пример: установим высоту контейнера игры на 80% от высоты экрана */
+  max-width: 1000px; /* Пример: установим максимальную ширину контейнера игры */
+  margin: 0 auto; /* Центрирование контейнера игры по горизонтали */
+}
+
+.game {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 100px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.timer {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#word {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+#userInput {
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.score {
+  font-size: 16px;
+}
+
+.modal {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 350px; /* Фиксированная ширина */
+  height: 300px; /* Фиксированная высота */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+.modal img {
+  max-width: 150px;
+  max-height: 150px;
+  display: block;
+  margin: 0 auto;
+}
+
+.result-text {
+  color: #000;
+  margin-top: 20px;
+}
+
+#restartButton {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #3498db;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#restartButton:hover {
+  background-color: #2980b9;
+}
+
+#startButton {
+  padding: 12px 24px;
+  font-size: 20px;
+  background-color: #27ae60;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#startButton:hover {
+  background-color: #219e54;
+}
+
+.count {
+  font-weight: bold;
+  margin: 0 5px;
+}
+
+
+
+.score span {
+  margin: 0 5px;
+}
+
+.score span:first-child {
+  margin-right: 10px;
+}
+
+.score .correct {
+  background-color: #27ae60;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.score .wrong {
+  background-color: #ffcccc;
+  color: #ff0000;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+/* Анимация для модального окна */
+.modal-content-animation {
+  animation: modalFadeIn 5s ease-in-out forwards;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(2);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Анимации для остальных элементов */
+.game-container,
+.game {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Адаптивный дизайн */
+@media screen and (max-width: 768px) {
+  .modal-content {
+    width: 80%;
+    height: auto;
+    max-width: 80%;
+    max-height: 80%;
+  }
+}
+
+/* Визуальные индикаторы */
+#userInput:focus {
+  border-color: #27ae60; /* Цвет рамки при активации поля ввода */
+  box-shadow: 0 0 5px #27ae60; /* Тень при активации поля ввода */
+}
