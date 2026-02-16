@@ -4,7 +4,6 @@ const TEXTS = {
 
   tabLevel1: "Уровень 1",
   tabLevel2: "Уровень 2",
-  tabLevel3: "Уровень 3",
 
   passwordLabel: "Введите пароль",
   passwordPlaceholder: "Введите пароль",
@@ -105,5 +104,6 @@ const TEXTS = {
 };
 
 export default TEXTS;
+
 
 
