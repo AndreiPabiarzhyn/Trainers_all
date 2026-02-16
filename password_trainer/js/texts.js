@@ -101,7 +101,8 @@ const TEXTS = {
   l3FailText: "Не совпало или время вышло.",
 
   footerTipPrefix: "",
-  footerTipText: "лучше менеджер паролей, а не заметки."
+  footerTipText: "Created by Andrei Pabiarzhyn for Kodland"
 };
 
 export default TEXTS;
+
