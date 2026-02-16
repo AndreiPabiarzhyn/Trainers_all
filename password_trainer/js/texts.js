@@ -1,6 +1,6 @@
 const TEXTS = {
   appTitle: "Тренажёр пароля",
-  appSubtitle: "Уровень 1: тренажёр • Уровень 2: атака • Уровень 3: подтверждение",
+  appSubtitle: "Уровень 1: тренажёр • Уровень 2: атака",
 
   tabLevel1: "Уровень 1",
   tabLevel2: "Уровень 2",
@@ -105,4 +105,5 @@ const TEXTS = {
 };
 
 export default TEXTS;
+
 
