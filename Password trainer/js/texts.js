@@ -100,7 +100,7 @@ const TEXTS = {
   l3FailTitle: "Не вышло ❌",
   l3FailText: "Не совпало или время вышло.",
 
-  footerTipPrefix: "Tip:",
+  footerTipPrefix: "",
   footerTipText: "Created by Andrei Pabiarzhyn for Kodland"
 };
 
